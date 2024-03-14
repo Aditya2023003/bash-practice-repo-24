@@ -1,15 +1,34 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# TODO (Run this script as): color magenta && echo hello && color reset
+# Run this script as: ./script.sh <color> && echo hello && ./script.sh reset
 
 color() {
     echo -ne "\033[$1;$2m"
 }
 
 declare -A color_mapping=(
-    # TODO: Add more color values
-    # Refer bash color codes
-    ['magenta']=35
+    ['red']=31
+    ['green']=32
+    ['yellow']=33
+    ['blue']=34
+    ['purple']=35
+    ['cyan']=36
+    ['white']=37
+    ['orange']=91
+    ['light_green']=92
+    ['light_yellow']=93
+    ['light_blue']=94
+    ['light_purple']=95
+    ['light_cyan']=96
+    ['light_gray']=97
+    ['dark_gray']=90
+    ['light_red']=91
+    ['light_orange']=33
+    ['lighter_green']='1;32'
+    ['lighter_blue']='1;34'
+    ['lighter_purple']='1;35'
+    ['lighter_cyan']='1;36'
+    ['lighter_gray']='1;37'
 )
 
 if [[ $1 == 'reset' ]]; then
@@ -18,3 +37,26 @@ else
     color 1 ${color_mapping[$1]}
 fi
 
+# Display colors
+echo -e "$(color red)Red$(color reset)"
+echo -e "$(color green)Green$(color reset)"
+echo -e "$(color yellow)Yellow$(color reset)"
+echo -e "$(color blue)Blue$(color reset)"
+echo -e "$(color purple)Purple$(color reset)"
+echo -e "$(color cyan)Cyan$(color reset)"
+echo -e "$(color white)White$(color reset)"
+echo -e "$(color orange)Orange$(color reset)"
+echo -e "$(color light_green)Light Green$(color reset)"
+echo -e "$(color light_yellow)Light Yellow$(color reset)"
+echo -e "$(color light_blue)Light Blue$(color reset)"
+echo -e "$(color light_purple)Light Purple$(color reset)"
+echo -e "$(color light_cyan)Light Cyan$(color reset)"
+echo -e "$(color light_gray)Light Gray$(color reset)"
+echo -e "$(color dark_gray)Dark Gray$(color reset)"
+echo -e "$(color light_red)Light Red$(color reset)"
+echo -e "$(color light_orange)Light Orange$(color reset)"
+echo -e "$(color lighter_green)Lighter Green$(color reset)"
+echo -e "$(color lighter_blue)Lighter Blue$(color reset)"
+echo -e "$(color lighter_purple)Lighter Purple$(color reset)"
+echo -e "$(color lighter_cyan)Lighter Cyan$(color reset)"
+echo -e "$(color lighter_gray)Lighter Gray$(color reset)"
